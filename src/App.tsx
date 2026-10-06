@@ -38,7 +38,7 @@ function Scene({ onReady, onError, onSelect, selected, reading, onPresented, onI
     scene.fog = new THREE.FogExp2('#020408', 0.065);
     const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 60);
     let renderer: THREE.WebGLRenderer;
-    try { renderer = new THREE.WebGLRenderer({ antialias: true }); }
+    try { renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' }); }
     catch { onError(); return; }
     renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
     renderer.shadowMap.enabled = true;
